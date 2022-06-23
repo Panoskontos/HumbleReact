@@ -3,12 +3,18 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     
+    // State
     state = { 
         count: 0,
         title:"C",
         titleColor:"green",
         tags: ['tag1', 'tag2','tag3']
      };
+
+
+    //  Function
+    handleAddition = () => {console.log("Addition")}
+    handleDecrease = () => {console.log("Decrease")}
 
     render() { 
         let classes = "badge badge-primary ";
@@ -29,7 +35,8 @@ class Counter extends Component {
                 
                     {this.state.tags.map((i)=><li key={i}>{i}
                     
-                    <button className='btn btn-md m-2'>+</button>
+                    <button onClick={this.handleAddition} className='btn btn-md m-2'>+</button>
+                    <button onClick={this.handleDecrease} className='btn btn-md m-2'>-</button>
                     </li>
                     
                     )}
