@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// Handling Events
 
 
 class Counter extends Component {
@@ -11,10 +12,21 @@ class Counter extends Component {
         tags: ['tag1', 'tag2','tag3']
      };
 
+    //  Constructor
+    //  to use state in functions and commit data
+    // constructor(){
+    //     super();
+    //     this.handleAddition =  this.handleAddition.bind(this)
+    // }
+
 
     //  Function
-    handleAddition = () => {console.log("Addition")}
-    handleDecrease = () => {console.log("Decrease")}
+    handleAddition = () => {
+        console.log("Addition",this);
+        // updating the state
+        this.setState({count: ++this.state.count})
+    }
+    handleDecrease = () => {this.setState({count:this.state.count-1})}
 
     render() { 
         let classes = "badge badge-primary ";
