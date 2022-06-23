@@ -6,7 +6,8 @@ class Counter extends Component {
     state = { 
         count: 0,
         title:"C",
-        titleColor:"green"
+        titleColor:"green",
+        tags: ['tag1', 'tag2','tag3']
      };
 
     render() { 
@@ -24,8 +25,15 @@ class Counter extends Component {
             } className={classes}>{this.state.title} - {this.state.count === 0 ? 'Zero' : this.state.count}</h1>
 
             <br />
-
-            <button className='btn btn-md m-4'>+</button>
+            <ul className=''>
+                
+                    {this.state.tags.map((i)=><li key={i}>{i}
+                    
+                    <button className='btn btn-md m-2'>+</button>
+                    </li>
+                    
+                    )}
+            </ul>
 
             </div>
         );
