@@ -24,8 +24,9 @@ class Element extends Component {
             <div>
                 <span className='badge badge-info m-2 p-2'>{this.props.name}</span>
                 <button onClick={this.handleAdd} className='btn btn-primary m-3'>+</button>
-                <button onClick={this.handleDec} className='btn btn-danger m-3'>-</button>
+                <button onClick={this.handleDec} className='btn btn m-3'>-</button>
                 <button className='btn btn-info m-3'>{this.state.count}</button>
+                <button onClick={() => this.props.onDelete(this.props.id)} className='btn btn-danger m-3'>Remove</button>
             </div>
         );
     }

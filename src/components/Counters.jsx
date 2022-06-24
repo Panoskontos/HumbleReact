@@ -12,13 +12,25 @@ class Counters extends Component {
 
         sum:0
      } 
+
+    handleDelete =(counterId) => {
+        console.log('removing item ', counterId)
+        const newCounters = this.state.counters.filter(c=>c.id!==counterId)
+        this.setState({counters: newCounters})
+     }
+
     render() { 
         return (
             <div>
-                <h4>Total {this.state.counters.map((c)=>{this.state.sum+=c.value})} {this.state.sum}</h4>
+                <h4>Total </h4>
                 <br />
                 {this.state.counters.map((counter) => {
-                    return <Element key={counter.id} name={counter.name} value={counter.value} />
+                    return (
+                        <div style={{display:'flex',alignItems:'center'}}>
+                            <Element key={counter.id} id={counter.id} name={counter.name} value={counter.value} onDelete={this.handleDelete}/>   
+                        </div>
+                    )
+
                 })}
             </div>
         );
