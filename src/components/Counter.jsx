@@ -9,7 +9,12 @@ class Counter extends Component {
         count: 0,
         title:"C",
         titleColor:"green",
-        tags: ['tag1', 'tag2','tag3']
+        tags: ['tag1', 'tag2','tag3'],
+        quantity : {
+            'tag1':0,
+            'tag2':0,
+            'tag3':0,
+        }
      };
 
     //  Constructor
@@ -20,13 +25,20 @@ class Counter extends Component {
     // }
 
 
+
     //  Function
-    handleAddition = () => {
+    handleAddition = (id) => {
         console.log("Addition",this);
+        console.log(id.i)
         // updating the state
-        this.setState({count: ++this.state.count})
+        this.setState({
+            count: ++this.state.count,
+            title: "Total",
+        })
     }
-    handleDecrease = () => {this.setState({count:this.state.count-1})}
+    handleDecrease = (id) => {
+        console.log(id);
+        this.setState({count:this.state.count-1})}
 
     render() { 
         let classes = "badge badge-primary ";
@@ -47,8 +59,11 @@ class Counter extends Component {
                 
                     {this.state.tags.map((i)=><li key={i}>{i}
                     
-                    <button onClick={this.handleAddition} className='btn btn-md m-2'>+</button>
-                    <button onClick={this.handleDecrease} className='btn btn-md m-2'>-</button>
+                    <button onClick={ () => this.handleAddition({i}) } className='btn btn-md m-2'>+</button>
+                    <button onClick={ () => this.handleDecrease({i}) } className='btn btn-md m-2'>-</button>
+                    
+                    {this.state.quantity[i]}
+                    
                     </li>
                     
                     )}
