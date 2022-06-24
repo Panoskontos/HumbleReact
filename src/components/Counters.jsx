@@ -4,17 +4,20 @@ import Element from './Element';
 class Counters extends Component {
     state = { 
         counters: [
-            {id:1, value:0, name:'P1'},
+            {id:1, value:2, name:'P1'},
             {id:2, value:0, name:'P2'},
             {id:3, value:0, name:'P3'},
-            {id:4, value:0, name:'P4'},
+            {id:4, value:3, name:'P4'},
         ],
 
         sum:0
      } 
     onAdd = () => {
         console.log('adding sum')
-        this.setState({sum:++this.state.sum})
+        // var total = 0
+        // this.state.counters.map(c=>{total+=c.value})
+        // console.log(total)
+        // this.setState({sum:total})
     }
     handleDelete =(counterId) => {
         console.log('removing item ', counterId)
