@@ -22,6 +22,14 @@ class Counters extends Component {
         this.setState({counters: newCounters})
      }
 
+    //  handleReset =()=>{
+    //     const counters = this.state.counters.map(c=>{
+    //         c.value=0;
+    //         return c
+    //     })
+    //     this.setState({counters:counters})
+    //  }
+
     render() { 
         return (
             <div>
@@ -35,6 +43,8 @@ class Counters extends Component {
                     )
 
                 })}
+                <br />
+                <button className='btn'>Reset</button>
             </div>
         );
     }
