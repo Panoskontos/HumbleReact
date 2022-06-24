@@ -10,6 +10,7 @@ class Element extends Component {
         console.log('add')
         this.setState(
             {   count: ++this.state.count})
+        this.props.onAdd()
     }
 
     handleDec = () => {
