@@ -3,7 +3,7 @@ import { Component } from 'react'
 class Element extends Component {
     state = { 
         title:'Product',
-        count:0
+        count:this.props.value
      } 
 
     handleAdd = () => {
@@ -17,9 +17,12 @@ class Element extends Component {
     }
 
     render() { 
+        // props
+        console.log(this.props)
+        
         return (
             <div>
-                <span className='badge badge-info m-2'>{this.state.title}</span>
+                <span className='badge badge-info m-2 p-2'>{this.props.name}</span>
                 <button onClick={this.handleAdd} className='btn btn-primary m-3'>+</button>
                 <button onClick={this.handleDec} className='btn btn-danger m-3'>-</button>
                 <button className='btn btn-info m-3'>{this.state.count}</button>
