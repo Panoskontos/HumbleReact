@@ -1,5 +1,6 @@
 // import Counter from "./components/Counter";
 import Counters from "./components/Counters";
+import Todo from "./components/Todo";
 
 
 
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
 
       {/* <Counter/> */}
-      <Counters/>
+      {/* <Counters/> */}
+      <Todo/>      
 
     </div>
   );

@@ -12,8 +12,9 @@ class Counters extends Component {
 
         sum:0
      } 
-    onAdd = () => {
-        console.log('adding sum')
+    onAdd = (CounterId) => {
+        console.log('adding sum',CounterId)
+
         // var total = 0
         // this.state.counters.map(c=>{total+=c.value})
         // console.log(total)
