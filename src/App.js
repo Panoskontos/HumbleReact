@@ -11,7 +11,8 @@ function App() {
 
       {/* <Counter/> */}
       {/* <Counters/> */}
-      <Todo/>      
+      {/* Added todo list */}
+      {/* <Todo/>       */}
 
     </div>
   );
